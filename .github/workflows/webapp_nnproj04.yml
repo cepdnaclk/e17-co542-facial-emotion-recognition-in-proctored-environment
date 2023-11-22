@@ -4,11 +4,18 @@
 
 name: Build and deploy Python app to Azure Web App - nnproj04
 
+# on:
+#   push:
+#     branches:
+#       - webapp
+#   workflow_dispatch:
 on:
-  push:
-    branches:
-      - webapp
   workflow_dispatch:
+    inputs:
+      manual_trigger:
+        description: 'Manually Trigger Workflow'
+        required: false
+        default: 'true'
 
 jobs:
   build:
