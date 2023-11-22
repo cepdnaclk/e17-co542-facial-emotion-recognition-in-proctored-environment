@@ -27,4 +27,8 @@ def upload():
     return render_template('output.html', emotion_weights=emotion_weights, filename=image.filename)
 
 if __name__ == '__main__':
-   app.run(debug = True)
+    # dev
+    # app.run(debug = True)
+
+    # prod
+    app.run(host='0.0.0.0', debug=True)
