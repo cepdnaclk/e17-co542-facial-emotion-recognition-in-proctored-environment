@@ -4,18 +4,11 @@
 
 name: Build and deploy Python app to Azure Web App - nnproj04
 
-# on:
-#   push:
-#     branches:
-#       - webapp
-#   workflow_dispatch:
 on:
+  push:
+    branches:
+      - webapp
   workflow_dispatch:
-    inputs:
-      manual_trigger:
-        description: 'Manually Trigger Workflow'
-        required: false
-        default: 'true'
 
 jobs:
   build:
@@ -73,4 +66,4 @@ jobs:
         with:
           app-name: 'nnproj04'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_166EE2D3BD2E4B8398D15684416A3858 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A0076965FE8346B88824C72F5CBBD69C }}
