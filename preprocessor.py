@@ -3,17 +3,17 @@ from keras.utils import load_img
 from PIL import Image
 
 
+# def process_image(image_path):
+#     features = []
+#     img = load_img(image_path, color_mode="grayscale")
+#     img = np.array(img)
+#     features.append(img)
+#     features = np.array(features)
+#     features = features.reshape(len(features), 48, 48, 1)
+#     return features/255.0
+
+
 def process_image(image_path):
-    features = []
-    img = load_img(image_path, color_mode="grayscale")
-    img = np.array(img)
-    features.append(img)
-    features = np.array(features)
-    features = features.reshape(len(features), 48, 48, 1)
-    return features/255.0
-
-
-def process_image_2(image_path):
     # Open the high-resolution image
     img = Image.open(image_path)
 

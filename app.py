@@ -15,7 +15,6 @@ def upload():
         return jsonify({'error': 'No image provided'}), 400
 
     image = request.files['image']
-    
 
     # You can customize the destination folder and filename as needed
     image_path = 'static/'+image.filename
