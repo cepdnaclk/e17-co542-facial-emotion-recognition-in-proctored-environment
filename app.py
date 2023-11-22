@@ -17,8 +17,5 @@ def upload():
 
     return jsonify({'message': 'Image uploaded successfully', 'filename': image.filename})
 
-
-
-
 if __name__ == '__main__': 
    app.run(debug = True)
