@@ -29,7 +29,6 @@
             display: inline-block;
             margin-top: 3px;
             margin-bottom: 3px;
-            /* margin: 0 10px; */
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -39,12 +38,15 @@
 <body>
     <div id="container">
         <!-- Image -->
-        <img id="image" src="../uploads/Training_991508.jpg" alt="Image Showcase">
+        <img id="image"  src="{{url_for('static', filename=filename)}}" alt="Image Showcase" width="150" height="150">
 
         <!-- Keywords -->
-        {% for key, value in emotion_weights.items() %}
-            <li><div class="keyword">{{ key }} : {{ value }}</div></li>
-        {% endfor %}
+        <ul>
+            {% for key, value in emotion_weights.items() %}
+                <li><div class="keyword">{{ key }}: {{ value }}</div></li>
+            {% endfor %}
+        </ul>
     </div>
 </body>
 </html>
+

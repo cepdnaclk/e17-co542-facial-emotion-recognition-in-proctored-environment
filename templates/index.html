@@ -104,10 +104,12 @@
                     method: 'POST',
                     body: formData
                 })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    // Handle success response from the server
+                .then(response => response.text())  // Change to text() to get HTML content
+                .then(htmlData => {
+                    // Assuming the API returns HTML content
+                    document.open();
+                    document.write(htmlData);
+                    document.close();
                 })
                 .catch(error => {
                     console.error('Error:', error);
