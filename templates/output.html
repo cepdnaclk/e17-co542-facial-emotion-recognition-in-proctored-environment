@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Showcase</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #image {
+            max-width: 100%;
+            max-height: 70vh;
+            margin-bottom: 20px;
+        }
+
+        .keyword {
+            display: inline-block;
+            margin-top: 3px;
+            margin-bottom: 3px;
+            /* margin: 0 10px; */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <!-- Image -->
+        <img id="image" src="../uploads/Training_991508.jpg" alt="Image Showcase">
+
+        <!-- Keywords -->
+        {% for key, value in emotion_weights.items() %}
+            <li><div class="keyword">{{ key }} : {{ value }}</div></li>
+        {% endfor %}
+    </div>
+</body>
+</html>
