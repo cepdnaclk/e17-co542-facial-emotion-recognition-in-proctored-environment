@@ -33,8 +33,6 @@ def upload():
     # app.run(host='0.0.0.0', debug=True)
 
 if __name__ == '__main__':
-    # Use Gunicorn in production
-    import os
     host = '0.0.0.0'
-    port = int(os.environ.get('PORT', 5000))
-    app.run(host=host, port=port, debug=False)
+    port = 8000
+    app.run(host=host, port=port, debug=True)
