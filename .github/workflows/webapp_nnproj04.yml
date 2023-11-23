@@ -57,7 +57,9 @@ jobs:
           name: python-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
+        run: |
+          unzip release.zip
+          source venv/bin/activate
 
       
       - name: 'Deploy to Azure Web App'
@@ -67,3 +69,4 @@ jobs:
           app-name: 'nnproj04'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_A0076965FE8346B88824C72F5CBBD69C }}
+          entry-command: 'gunicorn -b 0.0.0.0:5000 app:app'
