@@ -26,9 +26,15 @@ def upload():
     print(emotion_weights)
     return render_template('output.html', emotion_weights=emotion_weights, filename=image.filename)
 
-if __name__ == '__main__':
-    # dev
-    # app.run(debug = True)
+# if __name__ == '__main__':
+#     app.run(debug = False)
 
     # prod
-    app.run(host='0.0.0.0', debug=True)
+    # app.run(host='0.0.0.0', debug=True)
+
+if __name__ == '__main__':
+    # Use Gunicorn in production
+    import os
+    host = '0.0.0.0'
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host=host, port=port, debug=False)
